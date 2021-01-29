@@ -29,3 +29,13 @@ Pizza.prototype.totalPrice = function() {
     }
   }
 
+
+  $(document).ready(function() {
+    $("form#contactInfo").submit(function(event) {
+      event.preventDefault();
+      const customerName = $("input#customerName").val();
+      $("form#orderInfo").hide();
+      $("form#orderScreen").show();
+    });
+
+  });
