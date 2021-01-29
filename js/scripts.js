@@ -1,3 +1,4 @@
+// Business Logic ------------
 function Pizza(size) {
   this.size = size;
   this.toppings = [];
@@ -12,17 +13,18 @@ Pizza.prototype.totalPrice = function() {
   baseMedium = 12;
   baseLarge = 14;
   numToppings;
-  if (this.size === "Small") {
-    totalPrice = (numToppings * 2)  + baseSmall;
+  for (index = 0; index<=numToppings; index++) {
+    if (this.size === "Small") {
+      totalPrice = (numToppings * 2)  + baseSmall
+      console.log("small");
+      } else if (this.size === "Medium") {
+      totalPrice = (numToppings * 3)  + baseMedium;
+      } else (this.size === "Large") {
+      totalPrice = (numToppings * 4)  + baseLarge;
+      }
     return "$" + totalPrice;
-  } else if (this.size === "Medium") {
-    totalPrice = (numToppings * 3)  + baseMedium;
-    return "$" + totalPrice;
-  } else (this.size === "Large"); {
-    totalPrice = (numToppings * 4)  + baseLarge;
-    return "$" + totalPrice;
+    }
   }
-}
 
 // Pizza.prototype.toppingPrice = function(baseSmall) {
 //   perTopping = 4;
