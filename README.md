@@ -27,3 +27,9 @@ Test: "it will return a tiered price based on size and number of toppings."
 Code:let pizza = new Pizza("Medium");
       let numToppings = 3;
 Expect("Medium" + 3).toEqual($21);
+
+Test: "it will return a tiered price based on size and number of toppings in a for loop."
+Code:let pizza = new Pizza("Medium");
+      let numToppings = 3;
+Expect("Medium" + 3).toEqual($21);
+
