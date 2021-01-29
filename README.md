@@ -3,9 +3,15 @@ Test: "This function constructs a pizza object with toppings, size and price."
 Code: let pizza = new Pizza("pepperoni")
 Expect(toppings).toEqual("pepperoni");
 
+Describe: addTopping()
+Test: "It will add toppings in an array for the order() function."
+Code: Let pizza = new Pizza("small", "pepperoni", "sausage", "olives")
+Expect("small", "pepperoni", "sausage", "olives").toEqual(["pepperoni", "sausage", "olives"]);
+
 Describe: order()
 Test: "it returns in a string the order for the user
 Code: let pizza = let pizza = new Pizza("pepperoni", "Large");
+Expect("pepperoni", "Large").toEqual("Large pepperoni);
 
 Describe: totalPrice()
 Test: "Prototype returns a price (10) for a small pizza."
