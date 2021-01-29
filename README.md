@@ -7,7 +7,7 @@ Describe: order()
 Test: "it returns in a string the order for the user
 Code: let pizza = let pizza = new Pizza("pepperoni", "Large");
 
-Describe: price()
+Describe: totalPrice()
 Test: "Prototype returns a price (10) for a small pizza."
 Code: let pizza = new Pizza("Small")
       pizza.price = 10;
@@ -17,3 +17,9 @@ Test: "Prototype returns a price (14) for a large pizza."
 Code: let pizza = new Pizza("Large")
       pizza.price = 14;
 Expect("Large").toEqual(14);
+
+Test: "it will return a price based on number of toppings."
+Code: let pizza = new Pizza("Small");
+      let numToppings = 3;
+Expect("Small" && 3).toEqual($22);
+
