@@ -1,5 +1,5 @@
-function Pizza() {
-  this.size;
+function Pizza(size) {
+  this.size = size;
   this.toppings = [];
 }
 
