@@ -17,9 +17,70 @@
     <p>The best pie's in town!!</p>
   </div>
   <div>
-    
-
-
+    <fieldset>
+      <legend>What size would you like?</legend>
+      <div>
+        <input type="checkbox" id="small" name="size" value="small">
+        <label for="small">Small (10")</label>
+      </div>
+      <div>
+        <input type="checkbox" id="medium" name="size" value="medium">
+        <label for="medium">Medium (12")</label>
+      </div>
+      <div>
+        <input type="checkbox" id="large" name="size" value="large">
+        <label for="large">Large (14")</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Which toppings would you like?</legend>
+      <p>Pricing for added toppings is as follows:</p>
+      <ul>
+        <li>$2 each for small pizzas.</li>
+        <li>$3 each for medium pizzas.</li>
+        <li>$4 each for large pizzas.</li>
+      </ul>
+      <div>
+        <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+        <label for="pepperoni">Pepperoni</label>
+      </div>
+      <div>
+        <input type="checkbox" id="sausage" name="toppings" value="sausage">
+        <label for="sausage">Sausage</label>
+      </div>
+      <div>
+        <input type="checkbox" id="olives" name="toppings" value="olives">
+        <label for="olives">Olives</label>
+      </div>
+      <div>
+        <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+        <label for="mushrooms">Mushrooms</label>
+      </div>
+    </fieldset>
+    <form id="contactInfo">
+      <div class="form-group">
+        <div class="container">  
+          <form id="contact" action="" method="post">
+            <h3>Contact Info</h3>
+            <fieldset>
+              <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Your Address" type="address" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+              <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+            </fieldset>
+            <fieldset>
+              <textarea placeholder="Any special requests?" tabindex="5"></textarea>
+            </fieldset>
+            <fieldset>
+              <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </form>
   </div>
 </body>
 </html>
