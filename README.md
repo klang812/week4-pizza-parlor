@@ -12,3 +12,8 @@ Test: "Prototype returns a price (10) for a small pizza."
 Code: let pizza = new Pizza("Small")
       pizza.price = 10;
 Expect("Small").toEqual(10);
+
+Test: "Prototype returns a price (14) for a large pizza."
+Code: let pizza = new Pizza("Large")
+      pizza.price = 14;
+Expect("Large").toEqual(14);

@@ -14,9 +14,15 @@ Pizza.prototype.price = function() {
   //let pizzaPrice;
   if (this.size === "Small") {
     return "$" + baseSmall;
+  } else if (this.size === "Medium") {
+    return "$" + baseMedium;
+  } else (this.size === "Large"); {
+    return "$" + baseLarge;
   }
+}
+
   // this.size = 
   // //let toppingQty;
   //   //for (let index = 1; index<=toppingQty; index++) {
   // pizzaPrice = basePrice + (toppingQty * 4)
-}
+
