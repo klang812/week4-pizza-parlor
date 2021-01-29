@@ -11,15 +11,16 @@ Pizza.prototype.totalPrice = function() {
   baseSmall = 10;
   baseMedium = 12;
   baseLarge = 14;
-  perTopping = 4;
-  toppings = perTopping * numToppings;
+  numToppings;
   if (this.size === "Small") {
-    totalPrice = toppings + baseSmall;
+    totalPrice = (numToppings * 2)  + baseSmall;
     return "$" + totalPrice;
   } else if (this.size === "Medium") {
-    return "$" + baseMedium;
+    totalPrice = (numToppings * 3)  + baseMedium;
+    return "$" + totalPrice;
   } else (this.size === "Large"); {
-    return "$" + baseLarge;
+    totalPrice = (numToppings * 4)  + baseLarge;
+    return "$" + totalPrice;
   }
 }
 

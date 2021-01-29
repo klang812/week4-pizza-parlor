@@ -23,3 +23,7 @@ Code: let pizza = new Pizza("Small");
       let numToppings = 3;
 Expect("Small" && 3).toEqual($22);
 
+Test: "it will return a tiered price based on size and number of toppings."
+Code:let pizza = new Pizza("Medium");
+      let numToppings = 3;
+Expect("Medium" && 3).toEqual($21);
