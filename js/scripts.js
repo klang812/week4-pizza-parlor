@@ -17,7 +17,6 @@ Pizza.prototype.totalPrice = function() {
   baseMedium = 12;
   baseLarge = 14;
   numToppings;
-  console.log("topping");
   for (index = 0; index<=numToppings; index++) {
     function numToppings()  {
       let inputElems = document.getElementsByTagName("input"),
@@ -54,15 +53,17 @@ Pizza.prototype.totalPrice = function() {
   // }
 
 // User Logic ---------------
+
+
   $(document).ready(function() {
     $("form#contactInfo").submit(function(event) {
       event.preventDefault();
       const customerName = $("input#customerName").val();
-      
-      $("form#orderInfo").hide();
-      $("form#orderScreen").show();
+      const newOrder = $("#customerOrder").val();
+      $("#orderInfo").hide();
+      $("#orderScreen").show();
       $("#name").text(customerName);
-      //let newOrder = 
+      $("#orderTotal").text(newOrder); 
       //$("#ordertotal").text(???);
     });
 
