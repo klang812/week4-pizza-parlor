@@ -11,12 +11,12 @@
   <title>Papa's Pizza</title>
 </head>
 <body>
-  <div class="jumbotron">
+  <div id="header" class="jumbotron" style="background-image: url(img/pizza.jpeg);">
     <h1>Papa's Pizza Parlor</h1>
     <h4>Mangia! Mangia!</h4>
     <p>The best pie's in town!!</p>
   </div>
-  <div>
+  <div class="jumbotron">
     <form id="orderInfo">
       <fieldset>
         <legend>What size would you like?</legend>
@@ -33,14 +33,13 @@
           <label for="large">Large (14")</label>
         </div>
       </fieldset>
-      <fieldset id="customerOrder">
+      <fieldset>
         <legend>Which toppings would you like?</legend>
+        <p>All of our pizzas come with our homemade tomato sauce, which is completely organic and Non-GMO and our three cheese blend.</p>
         <p>Pricing for added toppings is as follows:</p>
-        <ul>
-          <li>$2 each for small pizzas.</li>
-          <li>$3 each for medium pizzas.</li>
-          <li>$4 each for large pizzas.</li>
-        </ul>
+        <p>$2 each for small pizzas.</p>
+        <p>$3 each for medium pizzas.</p>
+        <p>$4 each for large pizzas.</p>
         <div>
           <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
           <label for="pepperoni">Pepperoni</label>

@@ -4,67 +4,57 @@ function Pizza(size) {
   this.toppings = [];
 }
 
-// Pizza.prototype.addTopping = function(topping) {
-//   this.toppings.push(topping);
-// }
-
-Pizza.prototype.order = function(topping) {
-  return this.size + " " + this.toppings.push(topping);
+Pizza.prototype.addTopping = function(topping) {
+  this.toppings.push(topping);
 }
 
-Pizza.prototype.totalPrice = function() {
+Pizza.prototype.custChoice = function() {
+  let numToppings = document.getElementsByName("toppings");
+  let count = 0;
+  for (index = 0; index<numToppings.length; index++) {
+    if (numToppings[index].checked === true) {
+      count++;
+    }
+  }
+  return count;
+}
+  
+Pizza.prototype.orderTotal = function() {
+  let totalPrice = 0;
   baseSmall = 10;
   baseMedium = 12;
   baseLarge = 14;
-  numToppings;
-  for (index = 0; index<=numToppings; index++) {
-    function numToppings()  {
-      let inputElems = document.getElementsByTagName("input"),
-        count = 0;
-    
-        for (let i=0; i<inputElems.length; i++) {       
-        if (inputElems[i].type == "checkbox" && inputElems[i].checked == true){
-              count++;
-          }
-          alert(count);
-        }
-      }
-    if (this.size === "small") {
-      totalPrice = (numToppings * 2)  + baseSmall
+  if (this.size === "small") {
+      totalPrice = (this.custChoice() * 2)  + baseSmall;
       } else if (this.size === "medium") {
-      totalPrice = (numToppings * 3)  + baseMedium;
+      totalPrice = (this.custChoice() * 3)  + baseMedium;
       } else {
-      totalPrice = (numToppings * 4)  + baseLarge;
-      }
-    return "$" + totalPrice;
+      totalPrice = (this.custChoice() * 4)  + baseLarge;
+  }
+  return "$" + totalPrice;
+}
+
+function getSize(pizzaSizes) {
+  for (let i=0; i<pizzaSizes.length; i++) {
+    if (pizzaSizes[i].checked === true) {
+      return pizzaSizes[i].value;
     }
   }
-
-  // function checkboxes()  {
-  // let inputElems = document.getElementsByTagName("input"),
-  //   count = 0;
-
-  //   for (let i=0; i<inputElems.length; i++) {       
-  //   if (inputElems[i].type == "checkbox" && inputElems[i].checked == true){
-  //         count++;
-  //     }
-  //     alert(count);
-  //   }
-  // }
+}
 
 // User Logic ---------------
-
-
   $(document).ready(function() {
-    $("form#contactInfo").submit(function(event) {
+    $("form#orderInfo").submit(function(event) {
       event.preventDefault();
+      console.log("logic");
       const customerName = $("input#customerName").val();
-      const newOrder = $("#customerOrder").val();
+      const pizzaSizes = document.getElementsByName("size");
+      const pizza = new Pizza(getSize(pizzaSizes));
+      console.log(pizza.size);
       $("#orderInfo").hide();
       $("#orderScreen").show();
+      const custOrder = pizza.orderTotal();
       $("#name").text(customerName);
-      $("#orderTotal").text(newOrder); 
-      //$("#ordertotal").text(???);
+      $("#orderTotal").text(custOrder); 
     });
-
   });
