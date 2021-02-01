@@ -5,14 +5,14 @@
 #### *By Kerry Lang*
 
 ## Description
-_This project was intended to test my knowledge using loops, arrays, and testing code throughout the project. For example I implemented  multiple loops, tested code after completing each step of the objectives, made sure my code is clean and easy to read and made commits regularly to Github_
+_This project was intended to test my knowledge using Object-Oriented Programming, constructor objects, methods and testing.  For example I tested code after completing each step of the objectives, made sure my code is clean and easy to read and made commits regularly to Github_
 
 ## Behavior
 
 ## Setup
-* _Clone the repository https://github.com/klang812/week3-mrrogers/tree/main/mr-rogers-week3-project to your desktop._
+* _Clone the repository https://github.com/klang812/week4-pizza-parlor to your desktop._
 * _Navigate to the top level of the directory._
-* _Open programmer-language-selector/index.html in your browser._
+* _Open week4-pizza-parlor/index.html in your browser._
 
 ## Specs
 
