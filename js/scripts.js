@@ -46,11 +46,9 @@ function getSize(pizzaSizes) {
   $(document).ready(function() {
     $("form#orderInfo").submit(function(event) {
       event.preventDefault();
-      console.log("logic");
       const customerName = $("input#customerName").val();
       const pizzaSizes = document.getElementsByName("size");
       const pizza = new Pizza(getSize(pizzaSizes));
-      console.log(pizza.size);
       $("#orderInfo").hide();
       $("#orderScreen").show();
       const custOrder = pizza.orderTotal();
