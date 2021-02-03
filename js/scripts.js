@@ -1,22 +1,7 @@
 // Business Logic ------------
-function Pizza(size) {
+function Pizza(size, toppings) {
   this.size = size;
-  this.toppings = [];
-}
-
-Pizza.prototype.addTopping = function(topping) {
-  this.toppings.push(topping);
-}
-
-Pizza.prototype.custChoice = function() {
-  let numToppings = document.getElementsByName("toppings");
-  let count = 0;
-  for (index = 0; index<numToppings.length; index++) {
-    if (numToppings[index].checked === true) {
-      count++;
-    }
-  }
-  return count;
+  this.toppings = toppings;
 }
   
 Pizza.prototype.orderTotal = function() {
@@ -25,11 +10,11 @@ Pizza.prototype.orderTotal = function() {
   baseMedium = 12;
   baseLarge = 14;
   if (this.size === "small") {
-      totalPrice = (this.custChoice() * 2)  + baseSmall;
+      totalPrice = (this.toppings.length * 2)  + baseSmall;
       } else if (this.size === "medium") {
-      totalPrice = (this.custChoice() * 3)  + baseMedium;
+      totalPrice = (this.toppings.length * 3)  + baseMedium;
       } else {
-      totalPrice = (this.custChoice() * 4)  + baseLarge;
+      totalPrice = (this.toppings.length * 4)  + baseLarge;
   }
   return "$" + totalPrice;
 }
@@ -48,7 +33,11 @@ function getSize(pizzaSizes) {
       event.preventDefault();
       const customerName = $("input#customerName").val();
       const pizzaSizes = document.getElementsByName("size");
-      const pizza = new Pizza(getSize(pizzaSizes));
+      let newToppings = [];
+      document.querySelectorAll('input[name="toppings"]:checked').forEach((topping) => {
+        newToppings.push(topping.value)
+      })
+      const pizza = new Pizza(getSize(pizzaSizes), newToppings);
       $("#orderInfo").hide();
       $("#orderScreen").show();
       const custOrder = pizza.orderTotal();
